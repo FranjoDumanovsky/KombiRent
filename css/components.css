@@ -240,9 +240,9 @@
   }
 
   .nav__logo-icon {
-    width: 28px;
-    height: 28px;
-    color: var(--color-primary);
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   .nav__menu {
@@ -1054,9 +1054,9 @@
   }
 
   .site-footer__logo-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--color-primary);
+    height: 44px;
+    width: auto;
+    display: block;
   }
 
   .site-footer__title {
