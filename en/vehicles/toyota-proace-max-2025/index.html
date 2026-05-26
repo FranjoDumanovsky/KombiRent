@@ -33,7 +33,20 @@
             </a>
           </li>
           <li><a href="../../index.html" class="nav__link">Home</a></li>
-          <li><a href="../../index.html#vehicles" class="nav__link nav__link--active">Vehicles</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="../../index.html#vehicles" class="nav__link nav__link--has-dropdown nav__link--active">
+              Vehicles
+              <svg class="nav__caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <ul class="nav__dropdown">
+              <li><a href="../ford-transit-custom-2017/index.html" class="nav__dropdown-link">Ford Transit Custom</a></li>
+              <li><a href="../ford-transit-2013/index.html" class="nav__dropdown-link">Ford Transit</a></li>
+              <li><a href="../ford-transit-putnicki/index.html" class="nav__dropdown-link">Ford Transit Passenger</a></li>
+              <li><a href="./index.html" class="nav__dropdown-link">Toyota ProAce Max</a></li>
+            </ul>
+          </li>
           <li><a href="../../index.html#about" class="nav__link">About</a></li>
           <li><a href="../../index.html#services" class="nav__link">Services</a></li>
           <li><a href="../../index.html#contact" class="nav__link">Contact</a></li>
