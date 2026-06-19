@@ -1,10 +1,10 @@
-import { initNav } from "./nav.js";
-import { initScrollAnimations } from "./scroll.js";
-import { initSmoothScroll } from "./smooth-scroll.js";
-import { initForms } from "./forms.js";
-import { initFleetSwiper } from "./fleet-swiper.js";
-import { initAccordion } from "./accordion.js";
-import { initLightbox } from "./lightbox.js";
+import { initNav } from "./nav.js?v=2";
+import { initScrollAnimations } from "./scroll.js?v=2";
+import { initSmoothScroll } from "./smooth-scroll.js?v=2";
+import { initForms } from "./forms.js?v=2";
+import { initFleetSwiper } from "./fleet-swiper.js?v=2";
+import { initAccordion } from "./accordion.js?v=2";
+import { initLightbox } from "./lightbox.js?v=2";
 
 initNav();
 initScrollAnimations();
