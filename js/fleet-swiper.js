@@ -3,27 +3,11 @@ export function initFleetSwiper() {
 
   if (!swiperEl || typeof Swiper === "undefined") return;
 
-  /* Swiper 11 loop mode repositions (not clones) slides, so it needs
-     at least  ceil(slidesPerView) * 2  physical DOM slides to fill
-     both sides of the centred active card.  Duplicate the original
-     set until we meet that minimum. */
-  const wrapper = swiperEl.querySelector(".swiper-wrapper");
-  const origSlides = [...wrapper.children];
-  const minNeeded = 6; // 2.5 × 2 = 5, +1 buffer
-  let i = 0;
-  while (wrapper.children.length < minNeeded) {
-    wrapper.appendChild(origSlides[i % origSlides.length].cloneNode(true));
-    i++;
-  }
-
-  const uniqueCount = origSlides.length;
-
   new Swiper(".fleet-swiper", {
     slidesPerView: 1,
     spaceBetween: 8,
     centeredSlides: true,
-    loop: true,
-    loopedSlides: uniqueCount,
+    loop: false,
     speed: 500,
     grabCursor: true,
     keyboard: {
