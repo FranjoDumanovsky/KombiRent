@@ -712,6 +712,15 @@
     .hero__image {
       object-position: 72% center;
     }
+
+    .hero::after {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
   }
 
   .hero__content {
@@ -834,7 +843,7 @@
 
   .card__specs-grid {
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: repeat(2, minmax(0, 200px));
     gap: var(--space-sm) var(--space-md);
   }
 
@@ -899,6 +908,17 @@
         transparent 100%
       );
       backdrop-filter: none;
+    }
+
+    .card__specs {
+      padding-inline: 0;
+    }
+  }
+
+  /* Narrow phones: stack specs to one column so values never clip */
+  @media (max-width: 480px) {
+    .card__specs-grid {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 
@@ -1964,6 +1984,14 @@
 .fleet-swiper .swiper-button-next::after {
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
+}
+
+/* ── Mobile: fade nav buttons so they don't cover the slide ── */
+@media (max-width: 768px) {
+  .fleet-swiper .swiper-button-prev,
+  .fleet-swiper .swiper-button-next {
+    opacity: 0.76;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
