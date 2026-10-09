@@ -19,13 +19,13 @@
     <link rel="alternate" hreflang="x-default" href="./index.html" />
 
     <!-- CSS in correct layer order -->
-    <link rel="stylesheet" href="../css/reset.css?v=2" />
-    <link rel="stylesheet" href="../css/tokens.css?v=2" />
-    <link rel="stylesheet" href="../css/global.css?v=2" />
-    <link rel="stylesheet" href="../css/layout.css?v=2" />
-    <link rel="stylesheet" href="../js/vendor/swiper-bundle.min.css?v=2" />
-    <link rel="stylesheet" href="../css/components.css?v=2" />
-    <link rel="stylesheet" href="../css/utilities.css?v=2" />
+    <link rel="stylesheet" href="../css/reset.css?v=4" />
+    <link rel="stylesheet" href="../css/tokens.css?v=4" />
+    <link rel="stylesheet" href="../css/global.css?v=4" />
+    <link rel="stylesheet" href="../css/layout.css?v=4" />
+    <link rel="stylesheet" href="../js/vendor/swiper-bundle.min.css?v=4" />
+    <link rel="stylesheet" href="../css/components.css?v=4" />
+    <link rel="stylesheet" href="../css/utilities.css?v=4" />
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -531,7 +531,17 @@
             <!-- Left: Form Card -->
             <div class="contact-card">
               <h3 class="contact-card__title">Pošaljite nam poruku</h3>
-              <form class="form" data-form="validate">
+
+              <p class="form-status" id="form-status" hidden role="status"></p>
+
+              <form class="form" data-form="validate" action="../send.php" method="post">
+                <input type="hidden" name="lang" value="hr" />
+                <p class="hp" aria-hidden="true">
+                  <label>Ne ispunjavajte ovo polje:
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                  </label>
+                </p>
+
                 <div class="form__group">
                   <label for="name" class="form__label">Ime i prezime</label>
                   <input
@@ -539,6 +549,8 @@
                          id="name"
                          name="name"
                          class="form__input"
+                         maxlength="100"
+                         autocomplete="name"
                          required />
                   <span class="form__error"></span>
                 </div>
@@ -550,6 +562,8 @@
                          id="email"
                          name="email"
                          class="form__input"
+                         maxlength="200"
+                         autocomplete="email"
                          required />
                   <span class="form__error"></span>
                 </div>
@@ -560,7 +574,9 @@
                          type="tel"
                          id="phone"
                          name="phone"
-                         class="form__input" />
+                         class="form__input"
+                         maxlength="40"
+                         autocomplete="tel" />
                   <span class="form__error"></span>
                 </div>
 
@@ -571,6 +587,7 @@
                             name="message"
                             class="form__textarea"
                             rows="5"
+                            maxlength="5000"
                             required></textarea>
                   <span class="form__error"></span>
                 </div>
@@ -694,9 +711,9 @@
     </footer>
 
     <!-- JS -->
-    <script src="../js/vendor/lenis.min.js?v=2" defer></script>
-    <script src="../js/vendor/swiper-bundle.min.js?v=2" defer></script>
-    <script src="../js/main.js?v=2" type="module"></script>
+    <script src="../js/vendor/lenis.min.js?v=4" defer></script>
+    <script src="../js/vendor/swiper-bundle.min.js?v=4" defer></script>
+    <script src="../js/main.js?v=4" type="module"></script>
   </body>
 
 </html>

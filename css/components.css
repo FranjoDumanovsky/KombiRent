@@ -1095,6 +1095,55 @@
     display: block;
   }
 
+  /* Honeypot: hidden from humans, present for bots. */
+  .hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  /* Carries [hidden] until a submit resolves. form-status.js unhides it, forces
+     a reflow, then adds --visible so the fade in (and later out) actually runs. */
+  .form-status {
+    margin: 0 0 var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity var(--duration-normal) var(--ease-default),
+      transform var(--duration-normal) var(--ease-default);
+  }
+
+  .form-status--visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .form-status {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .form-status--ok {
+    background-color: var(--color-primary-soft-bg);
+    border: var(--border-width) solid var(--color-primary-soft);
+    color: var(--color-neutral-900);
+  }
+
+  .form-status--error {
+    background-color: #fef2f2;
+    border: var(--border-width) solid #fca5a5;
+    color: var(--color-error);
+  }
+
   /* ──────────── Contact Layout ──────────── */
   .contact-grid {
     display: grid;

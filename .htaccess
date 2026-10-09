@@ -1,0 +1,54 @@
+# KombiRent — Apache config for shared hosting.
+# Croatian shared hosts run Apache + cPanel, so this file is read automatically.
+# If the host runs nginx instead, none of this applies — ask them for the equivalent.
+
+# UTF-8 by default, otherwise Croatian diacritics (č ć š ž đ) break on some hosts.
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS. Domain-agnostic, so it works before the final domain is known.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # TODO once the domain is decided: add a canonical-host redirect here, the way
+  # the Hostel Samobor site does, so www/non-www do not both serve the site.
+  # RewriteCond %{HTTP_HOST} !^kombirent\.hr$ [NC]
+  # RewriteRule ^(.*)$ https://kombirent.hr/$1 [R=301,L]
+</IfModule>
+
+# Never serve project docs or dotfiles over HTTP.
+<FilesMatch "\.(md|sql|json|yml)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Images/fonts are content-stable; HTML must stay short so edits go live.
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php85” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php85 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

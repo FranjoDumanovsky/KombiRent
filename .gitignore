@@ -1,0 +1,14 @@
+# Secrets — real SMTP credentials live here, never commit
+php/mail-config.php
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Build/scratch artifacts
+css.zip
+
+# cPanel-managed (MultiPHP INI Editor) — server owns these
+.user.ini
+php.ini
