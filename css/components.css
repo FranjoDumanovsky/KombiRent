@@ -803,6 +803,16 @@
     color: var(--color-white-60);
   }
 
+  .card__price-anchor {
+    max-width: 16ch;
+    margin-block-start: var(--space-2xs);
+    font-size: var(--text-xs);
+    line-height: var(--leading-tight);
+    color: var(--color-white-60);
+    text-align: right;
+    text-shadow: 0 1px 3px rgb(0 0 0 / 0.8);
+  }
+
   .card__body {
     position: relative;
     align-self: end;
@@ -1476,6 +1486,19 @@
     color: var(--color-neutral-500);
   }
 
+  .vehicle-intro__anchor {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    text-align: right;
+    margin-block: var(--space-2xs) 0;
+  }
+
+  @media (max-width: 768px) {
+    .vehicle-intro__anchor {
+      text-align: left;
+    }
+  }
+
   .vehicle-details {
     width: 100%;
   }
@@ -1684,6 +1707,12 @@
     font-size: var(--text-sm);
     color: var(--color-neutral-500);
     margin-block-end: var(--space-lg);
+  }
+
+  .pricing-inline__anchor {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    margin-block: calc(var(--space-2xs) - var(--space-lg)) var(--space-lg);
   }
 
   .pricing-inline__details {
