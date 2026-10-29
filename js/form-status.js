@@ -6,7 +6,7 @@
 // flag is read here too and the banner behaves the same way.
 
 const HIDE_AFTER = 6000;
-// Keep in sync with --duration-normal in tokens.css.
+// Keep in sync with --duration-normal in css/main.css (tokens layer).
 const FADE_MS = 250;
 
 export function initFormStatus() {

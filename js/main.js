@@ -3,9 +3,11 @@ import { initScrollAnimations } from "./scroll.js?v=4";
 import { initSmoothScroll } from "./smooth-scroll.js?v=4";
 import { initForms } from "./forms.js?v=4";
 import { initFormStatus } from "./form-status.js?v=4";
-import { initFleetSwiper } from "./fleet-swiper.js?v=4";
+import { initFleetSwiper } from "./fleet-swiper.js?v=5";
 import { initAccordion } from "./accordion.js?v=4";
 import { initLightbox } from "./lightbox.js?v=4";
+import { initLazyEmbeds } from "./lazy-embed.js?v=1";
+import { initDeferredImages } from "./deferred-images.js?v=1";
 
 initNav();
 initScrollAnimations();
@@ -15,3 +17,5 @@ initFormStatus();
 initFleetSwiper();
 initAccordion();
 initLightbox();
+initLazyEmbeds();
+initDeferredImages();

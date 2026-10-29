@@ -14,21 +14,15 @@
     <title>KombiRent — Najam kombija u Samoboru | 091 3323 091</title>
 
     <!-- hreflang -->
-    <link rel="alternate" hreflang="hr" href="./index.html" />
-    <link rel="alternate" hreflang="en" href="../en/index.html" />
-    <link rel="alternate" hreflang="x-default" href="./index.html" />
+    <link rel="canonical" href="https://kombi-samobor.com/hr/" />
+    <link rel="alternate" hreflang="hr" href="https://kombi-samobor.com/hr/" />
+    <link rel="alternate" hreflang="en" href="https://kombi-samobor.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://kombi-samobor.com/hr/" />
 
-    <!-- CSS in correct layer order -->
-    <link rel="stylesheet" href="../css/reset.css?v=4" />
-    <link rel="stylesheet" href="../css/tokens.css?v=4" />
-    <link rel="stylesheet" href="../css/global.css?v=4" />
-    <link rel="stylesheet" href="../css/layout.css?v=4" />
-    <link rel="stylesheet" href="../js/vendor/swiper-bundle.min.css?v=4" />
-    <link rel="stylesheet" href="../css/components.css?v=6" />
-    <link rel="stylesheet" href="../css/utilities.css?v=4" />
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css?v=1" />
+    <link rel="stylesheet" id="swiper-css" href="../js/vendor/swiper-bundle.min.css?v=5" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="../js/vendor/swiper-bundle.min.css?v=5" /></noscript>
   </head>
 
   <body>
@@ -36,13 +30,13 @@
     <header class="site-header">
       <nav class="nav container container--max">
         <a href="./index.html" class="nav__logo">
-          <img class="nav__logo-icon" src="../images/content/logo.jpg" alt="KombiRent" />
+          <img class="nav__logo-icon" src="../images/content/logo.webp" alt="KombiRent" width="224" height="66" />
         </a>
 
         <ul class="nav__menu" data-nav="menu">
           <li class="nav__menu-logo" aria-hidden="true">
             <a href="./index.html" class="nav__logo">
-              <img class="nav__logo-icon" src="../images/content/logo.jpg" alt="KombiRent" />
+              <img class="nav__logo-icon" src="../images/content/logo.webp" alt="KombiRent" width="224" height="66" />
             </a>
           </li>
           <li><a href="./index.html" class="nav__link nav__link--active">Naslovnica</a></li>
@@ -91,13 +85,27 @@
     <main>
       <!-- ════════════ HERO ════════════ -->
       <section class="hero">
-        <img
+        <picture>
+          <source media="(max-width: 768px) and (max-aspect-ratio: 27/40)" type="image/avif"
+                  srcset="../images/content/hero-portrait-576.avif 576w, ../images/content/hero-portrait-768.avif 768w, ../images/content/hero-portrait-1000.avif 1000w, ../images/content/hero-portrait-1152.avif 1152w"
+                  sizes="68vh" />
+          <source media="(max-width: 768px) and (max-aspect-ratio: 27/40)" type="image/webp"
+                  srcset="../images/content/hero-portrait-576.webp 576w, ../images/content/hero-portrait-768.webp 768w, ../images/content/hero-portrait-1000.webp 1000w, ../images/content/hero-portrait-1152.webp 1152w"
+                  sizes="68vh" />
+          <source type="image/avif"
+                  srcset="../images/content/hero-960.avif 960w, ../images/content/hero-1440.avif 1440w, ../images/content/hero-1920.avif 1920w, ../images/content/hero-2560.avif 2560w"
+                  sizes="max(100vw, 165vh)" />
+          <source type="image/webp"
+                  srcset="../images/content/hero-960.webp 960w, ../images/content/hero-1440.webp 1440w, ../images/content/hero-1920.webp 1920w, ../images/content/hero-2560.webp 2560w"
+                  sizes="max(100vw, 165vh)" />
+          <img
              class="hero__image"
              src="../images/content/Hero_image.jpg"
              alt=""
              width="1920"
              height="1080"
-             loading="eager" />
+             loading="eager" fetchpriority="high" />
+        </picture>
         <div class="container container--max hero__content">
           <h1 class="hero__title">Kombi za svaku situaciju</h1>
           <p class="hero__subtitle">
@@ -149,14 +157,15 @@
             <div class="swiper-wrapper">
 
               <!-- 1) Ford Transit Custom 2017 — Putnički 8+1 -->
-              <article class="swiper-slide card card--horizontal">
+              <div class="swiper-slide card card--horizontal">
                 <img
                      class="card__image"
-                     src="../images/content/ford-transit-custom.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='340'/%3E"
+                     data-src="../images/content/ford-transit-custom-1280.webp"
                      alt="Ford Transit Custom 2017 — putnički kombi 8+1"
                      width="600"
                      height="340"
-                     loading="lazy" />
+                     loading="lazy" data-srcset="../images/content/ford-transit-custom-640.webp 640w, ../images/content/ford-transit-custom-960.webp 960w, ../images/content/ford-transit-custom-1280.webp 1280w" sizes="(max-width: 767px) 640px, (max-width: 1599px) 830px, 1080px" />
                 <div class="card__price">
                   <span class="card__price-value">od &euro;50</span>
                   <span class="card__price-unit">po danu</span>
@@ -219,17 +228,18 @@
                   <a href="./vozila/ford-transit-custom-2017/index.html"
                      class="card__link btn btn--primary btn--wide">Saznaj više &rarr;</a>
                 </div>
-              </article>
+              </div>
 
               <!-- 2) Ford Transit 2013 — Teretni (razni podmodeli) -->
-              <article class="swiper-slide card card--horizontal">
+              <div class="swiper-slide card card--horizontal">
                 <img
                      class="card__image"
-                     src="../images/content/ford-transit-teretni.jpeg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='340'/%3E"
+                     data-src="../images/content/ford-transit-teretni-1920.webp"
                      alt="Ford Transit 2013 — teretni kombi"
                      width="600"
                      height="340"
-                     loading="lazy" />
+                     loading="lazy" data-srcset="../images/content/ford-transit-teretni-640.webp 640w, ../images/content/ford-transit-teretni-960.webp 960w, ../images/content/ford-transit-teretni-1280.webp 1280w, ../images/content/ford-transit-teretni-1920.webp 1920w" sizes="(max-width: 767px) 640px, (max-width: 1599px) 830px, 1080px" />
                 <div class="card__price">
                   <span class="card__price-value">od &euro;50</span>
                   <span class="card__price-unit">po danu</span>
@@ -285,17 +295,18 @@
                   <a href="./vozila/ford-transit-2013/index.html" class="card__link btn btn--primary btn--wide">Saznaj
                     više &rarr;</a>
                 </div>
-              </article>
+              </div>
 
               <!-- 3) Ford Transit Putnički — 9+1 -->
-              <article class="swiper-slide card card--horizontal">
+              <div class="swiper-slide card card--horizontal">
                 <img
                      class="card__image"
-                     src="../images/content/ford-transit.jpeg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='340'/%3E"
+                     data-src="../images/content/ford-transit-900.webp"
                      alt="Ford Transit putnički kombi 9+1"
                      width="600"
                      height="340"
-                     loading="lazy" />
+                     loading="lazy" data-srcset="../images/content/ford-transit-640.webp 640w, ../images/content/ford-transit-900.webp 900w" sizes="(max-width: 767px) 640px, (max-width: 1599px) 830px, 1080px" />
                 <div class="card__price">
                   <span class="card__price-value">od &euro;50</span>
                   <span class="card__price-unit">po danu</span>
@@ -360,17 +371,18 @@
                   <a href="./vozila/ford-transit-putnicki/index.html"
                      class="card__link btn btn--primary btn--wide">Saznaj više &rarr;</a>
                 </div>
-              </article>
+              </div>
 
               <!-- 4) Toyota ProAce Max 2025 — Novo vozilo -->
-              <article class="swiper-slide card card--horizontal">
+              <div class="swiper-slide card card--horizontal">
                 <img
                      class="card__image"
-                     src="../images/content/Toyota-Proace-Max.jpeg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='340'/%3E"
+                     data-src="../images/content/toyota-proace-max-919.webp"
                      alt="Toyota ProAce Max 2025 — novi teretni kombi"
                      width="600"
                      height="340"
-                     loading="lazy" />
+                     loading="lazy" data-srcset="../images/content/toyota-proace-max-640.webp 640w, ../images/content/toyota-proace-max-919.webp 919w" sizes="(max-width: 767px) 640px, (max-width: 1599px) 830px, 1080px" />
                 <div class="card__price">
                   <span class="card__price-value">od &euro;50</span>
                   <span class="card__price-unit">po danu</span>
@@ -426,7 +438,7 @@
                   <a href="./vozila/toyota-proace-max-2025/index.html"
                      class="card__link btn btn--primary btn--wide">Saznaj više &rarr;</a>
                 </div>
-              </article>
+              </div>
 
             </div>
 
@@ -495,7 +507,8 @@
             <span href="#" class="service-card" data-animate>
               <img
                    class="service-card__image"
-                   src="../images/content/sobe_medved.jpg"
+                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'/%3E"
+                   data-src="../images/content/sobe-medved-250.webp"
                    alt="Sobe Medved — smještaj"
                    width="600"
                    height="800"
@@ -508,7 +521,8 @@
                data-animate>
               <img
                    class="service-card__image"
-                   src="../images/content/hostelSamobor.jpg"
+                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'/%3E"
+                   data-src="../images/content/hostel-samobor-476.webp"
                    alt="Hostel Samobor — smještaj"
                    width="600"
                    height="800"
@@ -521,11 +535,12 @@
                data-animate>
               <img
                    class="service-card__image"
-                   src="../images/content/kamper.jpg"
-                   alt="Najam kampera"
+                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'/%3E"
+                   data-src="../images/content/kamper-810.webp"
+                   alt="Interijer kampera"
                    width="600"
                    height="800"
-                   loading="lazy" />
+                   loading="lazy" data-srcset="../images/content/kamper-400.webp 400w, ../images/content/kamper-810.webp 810w" sizes="(max-width: 767px) calc(100vw - 32px), 380px" />
               <div class="service-card__overlay"></div>
               <h3 class="service-card__title">Najam kampera</h3>
             </a>
@@ -616,7 +631,7 @@
             <div class="contact-sidebar">
               <iframe
                       class="contact-map"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.2987015094873!2d15.703891475850764!3d45.801259971081464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765cbf6e60fc837%3A0xa34ff0346708dca3!2sObrtni%C4%8Dka%20ul.%2034%2C%2010430%2C%20Samobor!5e1!3m2!1shr!2shr!4v1781896683634!5m2!1shr!2shr"
+                      data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.2987015094873!2d15.703891475850764!3d45.801259971081464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765cbf6e60fc837%3A0xa34ff0346708dca3!2sObrtni%C4%8Dka%20ul.%2034%2C%2010430%2C%20Samobor!5e1!3m2!1shr!2shr!4v1781896683634!5m2!1shr!2shr"
                       allowfullscreen=""
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
@@ -661,7 +676,7 @@
         <div class="site-footer__grid">
           <div>
             <a href="./index.html" class="site-footer__logo">
-              <img class="site-footer__logo-icon" src="../images/content/logo.jpg" alt="KombiRent" />
+              <img class="site-footer__logo-icon" src="../images/content/logo.webp" alt="KombiRent" width="149" height="44" />
             </a>
             <p class="site-footer__text">
               Vaš pouzdani partner za najam putničkih i teretnih kombija u Samoboru i okolici.
@@ -728,8 +743,7 @@
 
     <!-- JS -->
     <script src="../js/vendor/lenis.min.js?v=4" defer></script>
-    <script src="../js/vendor/swiper-bundle.min.js?v=4" defer></script>
-    <script src="../js/main.js?v=4" type="module"></script>
+    <script src="../js/main.js?v=5" type="module"></script>
   </body>
 
 </html>
